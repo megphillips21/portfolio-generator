@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-// node module to use file system or (fs)
-// const fs = require('fs');
-// const generatePage = require('./src/page-template');
+// node module to use file system or (/fs)
+ const fs = require('fs');
+ const generatePage = require('./src/page-template');
 
 // const pageHTML = generatePage(name, github);
 
@@ -133,6 +133,12 @@ Add a New Project
 
 promptUser()
   .then(promptProject)
-  .then(portfolioData => {
-    console.log(portfolioData);
-  });
+  .then(portfolioData =>{
+   const pageHTML = generatePage(portfolioData);
+
+  // fs.writeFile('./index.html', pageHTML, err => {
+  //   if (err) throw new Error(err);
+
+  //   console.log('Page created! Check out index.html in this directory to see it!');
+  // });
+});
